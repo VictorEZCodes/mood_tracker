@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Mood Tracker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.min.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-controls">
+      <h1>Mood Tracker</h1>
+      <button id="darkModeToggle" class="icon-btn">🌙</button>
+    </div>
+
+    <div class="mood-input">
+      <h2>How are you feeling?</h2>
+      <input type="date" id="entryDate" class="date-picker">
+
+      <div class="emoji-buttons">
+        <button data-mood="great">😊</button>
+        <button data-mood="good">🙂</button>
+        <button data-mood="okay">😐</button>
+        <button data-mood="bad">😕</button>
+        <button data-mood="awful">😢</button>
+      </div>
+
+      <div class="custom-emoji">
+        <input type="text" id="customEmoji" placeholder="Add custom emoji..." maxlength="2">
+        <button id="addCustomEmoji" class="secondary-btn">Add</button>
+      </div>
+
+      <textarea id="moodNote" placeholder="Add a note about your day..."></textarea>
+      <button id="saveMood" class="save-btn">Save Entry</button>
+    </div>
+
+    <div class="mood-stats">
+      <h2>Mood Statistics</h2>
+      <canvas id="moodChart"></canvas>
+    </div>
+
+    <div class="mood-history">
+      <div class="history-header">
+        <h2>Your Mood History</h2>
+        <button id="exportData" class="secondary-btn">Export Data</button>
+      </div>
+      <div id="moodList"></div>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p id="popup-message"></p>
+      <button id="popup-confirm" class="primary-btn">OK</button>
+      <button id="popup-cancel" class="secondary-btn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="/src/index.js"></script>
+</body>
+
+</html>
